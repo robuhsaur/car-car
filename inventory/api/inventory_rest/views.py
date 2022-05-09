@@ -89,7 +89,7 @@ def api_manufacturers(request):
     if request.method == "GET":
         manufacturers = Manufacturer.objects.all()
         return JsonResponse(
-            {"manufactureres": manufacturers},
+            {"manufacturers": manufacturers},
             encoder=ManufacturerEncoder,
         )
     else:
