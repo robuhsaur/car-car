@@ -20,6 +20,18 @@ CarCar is broken up into three domains:
 ![Diagram](diagram.png) *Diagram For Project*
 
 
+## Setup
+- Clone the repo
+- Open in Visual Studio Code
+- While in the top level directory /project-beta
+  - run these commands
+    - docker volume create beta-data
+    - docker-compose build
+    - docker-compose up
+  - check your docker desktop to ensure sure all containers are running
+- go to "localhost:3000"
+
+
 
 ## Service microservice
 
@@ -32,22 +44,22 @@ CarCar is broken up into three domains:
 
 
 
-## Sales microservice
+##### Sales microservice
 
 
-# Models
+#### Models
  Customer, Salesperson, Salesrecord, and AutomobileVO would have to be modeled in order to establish data relationships.
 
 ## Customer Model
   The customer model has a one to many relationship to the Salesperson model beause 1 person can buy cars from many different salespersons. Besides that relationship, the customer model is self-contained holding the customer's Name, Address, and Phone number
 
-### Salesperson
+## Salesperson
   The salesperson has a many-to-many relationship with the salesrecord model because multiple salespersons can have multiple sales with a record attached. Salesrecords has to be the aggregate root as it combined all of the information from all the other API's. 
 
-#### AutomobileVO
+## AutomobileVO
   There are 2 things that I want to poll for with the AutomobileVO. I want the sold status of the vehicle in the inventory and the VIN(unique identifier) of the vehicle. when a salesrecord is created it will check to see if the car(identified by the VIN) has been sold or not.
 
-##### Salesrecord
+## Salesrecord
   The salesrecord model contains 4 fields:
 
 - Saleperson - ForeignKey
