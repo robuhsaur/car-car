@@ -9,7 +9,6 @@ root.render(
   </React.StrictMode>
 );
 
-<<<<<<< HEAD
 async function loadManufacturers() {
   const response = await fetch('http://localhost:8100/api/manufacturers/');
   if (response.ok) {
@@ -25,7 +24,6 @@ async function loadManufacturers() {
 }
 loadManufacturers();
 
-=======
 async function loadServices() {
   const response = await fetch("http://localhost:8080/api/appointments/");
   if (response.ok) {
@@ -42,4 +40,3 @@ async function loadServices() {
 }
 
 loadServices();
->>>>>>> 10f5ffd0da0d5e8a215bfc5b92d7a925ef2ce4d0

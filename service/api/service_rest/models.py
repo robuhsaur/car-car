@@ -21,3 +21,4 @@ class Appointment(models.Model):
     vip_status = models.BooleanField(default=False, null=True, blank=True)
     technician = models.ForeignKey(
         Technician, related_name="appointments", on_delete=models.CASCADE, null=True, blank=True)
+    status = models.BooleanField(default=False, null=True, blank=True)

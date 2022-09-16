@@ -37,12 +37,12 @@ class SalesRecordEncoder(ModelEncoder):
         "price",
         "customer",
         "automobile",
-        "id"
+        "id",
     ]
     encoders = {
         "saleperson": SalesPersonEncoder(),
         "customer": CustomerEncoder(),
-        "automobile": AutomobileVOEncoder()
+        "automobile": AutomobileVOEncoder(),
     }
 #list customers / create Customer
     #get/post
@@ -93,7 +93,7 @@ def api_salesperson(request):
 def api_list_sales_record(request, salesperson_vo_id=None):
     if request.method=="GET":
         if salesperson_vo_id is not None:
-            salesrecord = SalesRecord.objects.filter(saleperson=salesperson_vo_id)
+            salesrecord = SalesRecord.objects.filter(id=salesperson_vo_id)
         else:
             salesrecord = SalesRecord.objects.all()
         return JsonResponse(

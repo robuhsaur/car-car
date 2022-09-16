@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
-<<<<<<< HEAD
 import CreateVehicleModel from './CreateVehicleModel'
 import ListAutomobiles from './ListAutomobiles';
 import ManufacturerList from './ManufacturerList';
@@ -13,18 +12,13 @@ import CreateSalesPerson from './CreateSalesPerson';
 import SalesRecordListAll from './SalesRecordList';
 import CreateSalesRecord from './CreateSalesRecord';
 import SalespersonHistory from './SalespersonHistory';
-function App(props) {
-  // if (props.manufacturers !== undefined) {
-  //   return null;
-  // }
-=======
 import { ServiceAppointmentForm } from './ServiceForm';
 import TechnicianForm from './TechnicianForm'
 import AppointmentsList from './ServiceList'
+import ServiceHistory from './ServiceHistory'
 
 
 function App(props) {
->>>>>>> 10f5ffd0da0d5e8a215bfc5b92d7a925ef2ce4d0
   return (
     <BrowserRouter>
       <Nav />
@@ -43,13 +37,12 @@ function App(props) {
           <Route path="/salesrecord/create" element={<CreateSalesRecord />} />
           <Route path="/salesrecord/history" element={<SalespersonHistory />} />
         </Routes>
-        <Routes>
+        <Routes >
           <Route path="/service" element={<AppointmentsList appointment={props.appointment} />} />
-        </Routes>
-        <Routes >
           <Route path="/service/new" element={<ServiceAppointmentForm />} />
+          <Route path="/service/history" element={<ServiceHistory />} />
         </Routes>
-        <Routes >
+        <Routes>
           <Route path="/technician/new" element={<TechnicianForm />} />
         </Routes>
       </div>
