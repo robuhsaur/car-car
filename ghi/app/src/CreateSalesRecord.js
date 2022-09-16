@@ -85,6 +85,7 @@ class CreateSalesRecord extends React.Component{
         if (autoresponse.ok){
             
             let autodata = await autoresponse.json()
+            
             for(let i=0; i <(autodata.autos).length; i+=1){
                 if(autodata.autos[i].sold===true){
                     let removed = autodata.autos.splice(i,1)
