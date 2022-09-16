@@ -17,7 +17,7 @@ CarCar is broken up into three domains:
 * Services
 * Sales
 
-![Digram] (\sources\img\image (5).png) *Diagram For Project*
+![Digram] (\ghi\app\public\image (5).png) *Diagram For Project*
 
 ## Service microservice
 
