@@ -34,10 +34,16 @@ class AppointmentEncoder(ModelEncoder):
         "reason",
         "vip_status",
         "technician",
+        "status",
     ]
     encoders = {
         "technician": TechnicianEncoder()
     }
+
+    def get_extra_data(self, o):
+        return {
+            "name": o.technician.name
+        }
 
 
 
@@ -81,7 +87,7 @@ def api_appointment(request):
 
 
 
-@require_http_methods(["PUT"])
+@require_http_methods(["PUT", "DELETE"])
 def api_update_appointment(request, pk):
     if request.method == "PUT":
         try:
@@ -92,6 +98,20 @@ def api_update_appointment(request, pk):
             return JsonResponse(
                 appointment,
                 encoder=AppointmentEncoder,
+                safe=False,
+            )
+        except Appointment.DoesNotExist:
+            response = JsonResponse({"message": "Does not exist"})
+            response.status_code = 404
+            return response
+    
+    elif request.method == "DELETE":
+        try:
+            appointment = Appointment.objects.get(id=pk)
+            appointment.delete()
+            return JsonResponse(
+                appointment,
+                encoder=TechnicianEncoder,
                 safe=False,
             )
         except Appointment.DoesNotExist:

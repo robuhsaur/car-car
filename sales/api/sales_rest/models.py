@@ -9,6 +9,7 @@ class SalesPerson(models.Model):
     name = models.CharField(max_length=100)
     number = models.CharField(max_length=100)
 
+
 class AutomobileVO(models.Model):
     vin = models.CharField(max_length=25, unique=True)
     sold = models.BooleanField(default=False)
