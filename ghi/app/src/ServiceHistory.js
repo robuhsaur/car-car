@@ -19,22 +19,29 @@ class ServiceHistory extends React.Component {
     //         console.log(data.appointments)
     //     }
     // }
-    async handleSubmit(event) {
-        event.preventDefault()
-        const url = "http://localhost:8080/api/appointments/";
-        const response = await fetch(url);
-        if (response.ok) {
-            const data = await response.json();
-            // this.setState(({appointments: data.appointments}))
-            console.log(data.appointments)
+    // async handleSubmit(event) {
+    //     event.preventDefault()
+    //     const url = "http://localhost:8080/api/appointments/";
+    //     const response = await fetch(url);
+    //     if (response.ok) {
+    //         const data = await response.json();
+    //         // this.setState(({appointments: data.appointments}))
+    //         console.log(data.appointments)
 
-            const test = data.appointments.filter((appointment) => {
-                return appointment.vin === this.state.search
-            })
-            this.setState({ appointments: test })
-            console.log(test);
-        }
+    //         const test = data.appointments.filter((appointment) => {
+    //             return appointment.vin === this.state.search
+    //         })
+    //         this.setState({ appointments: test })
+    //         console.log(test);
+    //     }
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const putUrl = `${process.env.REACT_APP_SERVICE_API}/api/appointments`
+
     }
+
 
 
     handleChange(event) {
