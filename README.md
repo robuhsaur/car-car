@@ -1,14 +1,10 @@
-# CarCar
+# CarVentory
 
 Team:
 
 * Steve - Sales
 * Robbie - Service
   
-
-## Starting the project
- - Fork and clone the gitlab repo into our machines locally
- - We decided to work in the main branch only, being careful with our pushes.
 
 ## Design
 CarCar is broken up into three domains:
